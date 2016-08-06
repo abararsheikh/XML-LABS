@@ -1,0 +1,57 @@
+<html>
+<head><title>Tab data with Ajax and JavaScript</title>
+<script type="text/javascript">
+var xmlhttp;
+function loadXMLDoc(url)
+{
+xmlhttp=null;
+if (window.XMLHttpRequest)       //on call function create Request
+  {// code for Firefox, Opera, IE7, etc.
+  xmlhttp=new XMLHttpRequest();
+  }
+else if (window.ActiveXObject)
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+if (xmlhttp!=null)     // if request is not null..means request is availbae then execute this
+  {
+  xmlhttp.onreadystatechange=state_Change;   // calling state_Change function which is defined below
+  xmlhttp.open("GET",url,true);
+  xmlhttp.send(null);
+  }
+else
+  {
+  alert("Your browser does not support XMLHTTP.");
+  }
+}
+
+function state_Change()
+{
+if (xmlhttp.readyState==4)
+  {// 4 = "loaded"
+  if (xmlhttp.status==200)
+    {// 200 = "OK"
+    document.getElementById('T1').innerHTML=xmlhttp.responseText;   //created below empty element to display result
+    }
+  else
+    {
+    alert("Problem retrieving data:" + xmlhttp.statusText);
+    }
+  }
+}
+</script>
+</head>
+<!--loadXMLDOC is a funcrion which is declare at top ..now i m calling that function here and passing url(file)in it-->
+<body onLoad="loadXMLDoc('01-test_xmlhttp1.txt')">   <!--The text file is saved in folder and i am loading it by AJAX request-->
+
+<button onClick="loadXMLDoc('01-test_xmlhttp2.txt')">Click</button>
+<button onClick="loadXMLDoc('01-test_xmlhttp1.txt')">Original</button>
+
+<div id="T1" style="border:1px solid black;height:60;width:300;padding:5"></div>
+<br />
+</body>
+
+</html>
+
+
+

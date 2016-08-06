@@ -1,0 +1,89 @@
+<html>
+<head>
+<script type="text/javascript">
+var xmlhttp;
+
+function loadXMLDoc(url)
+{
+xmlhttp=null;
+if (window.XMLHttpRequest)
+  {// code for IE7, Firefox, Mozilla, etc.
+  xmlhttp=new XMLHttpRequest();
+  }
+else if (window.ActiveXObject)
+  {// code for IE5, IE6
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+if (xmlhttp!=null)
+  {
+  xmlhttp.onreadystatechange=onResponse;
+  xmlhttp.open("GET",url,true);
+  xmlhttp.send(null);
+  }
+else
+  {
+  alert("Your browser does not support XMLHTTP.");
+  }
+}
+
+function onResponse()
+{
+if(xmlhttp.readyState!=4) return;
+if(xmlhttp.status!=200)
+  {
+  alert("Problem retrieving XML data");
+  return;
+  }
+
+txt="<table border='1'>";  //we are writing html part inside script javascript do we can pu it in double quate with variable
+x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+//console.log(x);
+  //here above we are writing our response as an XML
+  //it's like var response= xmlhttp.responseXML
+  //then response.documentElement.getElementsByTagName("CD") you can do like this as well
+  //So here  i am geting as XMLDOM objec it's an array from this you can grab the data
+for (i=0;i<x.length;i++)
+  {
+  txt=txt + "<tr>";  //here i m connectiong aboe table with tr
+    //so it's become <table border='1'>  <tr> inside this row write title value
+  xx=x[i].getElementsByTagName("TITLE");   //i=0,1, etc first element of title as an array for elemt are seprate aray
+    {  // Above just i am getting the element ..and now i want to print this element value so that i can print by nodevalue
+    try
+      {
+      txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+      }
+    catch (er)
+      {
+      txt=txt + "<td> </td>"; //if there is an array then dont print anything just leave it empty cell
+      }
+    }
+  xx=x[i].getElementsByTagName("ARTIST");
+    {
+    try
+      {
+      txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+      }
+    catch (er)
+      {
+      txt=txt + "<td> </td>";
+      }
+    }
+  txt=txt + "</tr>";
+  }
+txt=txt + "</table>";
+  //write the above final reult into div
+document.getElementById('copy').innerHTML=txt;
+}
+
+</script>
+</head>
+
+<body>
+
+<button onClick="loadXMLDoc('03-cd_catalog1.xml')">Get CD info</button>
+<button onClick="loadXMLDoc('03-cd_catalog2.xml')">Get CD info</button>
+<div id="copy">
+</div>
+</body>
+</html>
+

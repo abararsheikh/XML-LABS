@@ -1,0 +1,39 @@
+<!-- Compare this Example with bookstore.html it's same -->
+<!-- Compare this Example with bookstore.html it's same -->
+<!DOCTYPE html>
+<html>
+<!--parse an XML string into an XML DOM object and then extracts some info from it with a JavaScript code-->
+<body>
+<h1>Humber College Note</h1>
+<div>
+    <b>To:</b> <span id="to"></span><br>
+    <b>From:</b> <span id="from"></span><br>
+    <b>Message:</b> <span id="message"></span>
+</div>
+
+
+<script>
+    // below code using Ajax Request it sending Ajax request
+
+    var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.open("get","note.xml",false);
+    xmlhttp.send(null);
+    // check how the Ajax request look like by alert command and how as a text it will come
+
+    //alert(xmlhttp.responseText);
+
+// storing Ajax response in xmlDoc
+
+    var xmlDoc = xmlhttp.responseXML;
+
+    console.log(xmlDoc.getElementsByTagName("to"));
+
+    // use for loop to display all elements value
+
+    document.getElementById("to").innerHTML=xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue ;
+
+    document.getElementById("from").innerHTML=xmlDoc.getElementsByTagName("from")[0].firstChild.nodeValue;
+    document.getElementById("message").innerHTML=xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><tpha ver="1.0">
+<header>
+<currentSeason startDate="2015-06-02" endDate="2015-09-08"/>
+<beachMeta id="0" name="City of Toronto Beaches" lat="" long=""/>
+<beachMeta id="1" name="Marie Curtis Park East Beach" lat="43.585563" long="-79.540732"/>
+<beachMeta id="2" name="Sunnyside Beach" lat="43.637432" long="-79.455954"/>
+<beachMeta id="3" name="Hanlan's Point Beach" lat="43.619325" long="-79.393254"/>
+<beachMeta id="4" name="Gibraltar Point Beach" lat="43.612487" long="-79.382173"/>
+<beachMeta id="5" name="Centre Island Beach" lat="43.616072" long="-79.373826"/>
+<beachMeta id="6" name="Ward's Island Beach" lat="43.630088" long="-79.352318"/>
+<beachMeta id="7" name="Cherry Beach" lat="43.636742" long="-79.344117"/>
+<beachMeta id="8" name="Woodbine Beaches" lat="43.66381" long="-79.305057"/>
+<beachMeta id="9" name="Kew Balmy Beach" lat="43.668559" long="-79.290057"/>
+<beachMeta id="10" name="Bluffer's Beach Park" lat="43.71363" long="-79.225948"/>
+<beachMeta id="11" name="Rouge Beach" lat="43.793217" long="-79.118217"/>
+</header>
+<body>
+<beachData beachId="0">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+</beachData>
+<beachData beachId="1">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>123</eColiCount>
+<beachAdvisory>E. coli levels exceed the provincially established safety level of 100.  Swim at your own risk.</beachAdvisory>
+<beachStatus>Unsafe</beachStatus>
+</beachData>
+<beachData beachId="2">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>134</eColiCount>
+<beachAdvisory>E. coli levels exceed the provincially established safety level of 100.  Swim at your own risk.</beachAdvisory>
+<beachStatus>Unsafe</beachStatus>
+</beachData>
+<beachData beachId="3">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>10</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="4">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>11</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="5">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>13</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="6">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>10</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="7">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>10</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="8">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<beachAdvisory>There is no data available for this beach.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="9">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>40</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="10">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<eColiCount>22</eColiCount>
+<beachAdvisory>Beach meets provincially established safety standards for swimming.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+<beachData beachId="11">
+<sampleDate>2015-09-06</sampleDate>
+<publishDate>2015-09-07 14:35:12</publishDate>
+<beachAdvisory>There is no data available for this beach.</beachAdvisory>
+<beachStatus>Safe</beachStatus>
+</beachData>
+</body>
+</tpha>

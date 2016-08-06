@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE  SONG SYSTEM 'song.dtd' >
+
+<SONG>
+    <TITLE songid="aa">Hot Cop </TITLE>
+    <COMPOSER>Jacques Morali</COMPOSER>
+    <COMPOSER>Henri Belolo</COMPOSER>
+    <COMPOSER>Victor Willis</COMPOSER>
+    <PRODUCER>Jacques Morali</PRODUCER>
+    <PUBLISHER>PolyGram Records</PUBLISHER>
+    <LENGTH>6:20</LENGTH>
+    <YEAR>1978</YEAR>
+    <address>
+        <street>111</street>
+        <country>aa</country>
+        <postalcode>1234</postalcode>
+    </address>
+    <ARTIST>Village People
+        <city>Toronto</city>
+    </ARTIST>
+    <ab></ab>
+</SONG>

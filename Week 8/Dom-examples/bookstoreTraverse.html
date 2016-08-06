@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="result"></div>
+<script>
+
+
+    var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.open("get","bookstore.xml",false);
+    xmlhttp.send(null);
+
+
+    var xmlDoc = xmlhttp.responseXML;
+
+
+
+
+    var booka = xmlDoc.documentElement;
+    traverse(booka);
+
+    function traverse(tree) {
+        if (tree.hasChildNodes()) {
+            document.write('<ul><li>');
+            document.write('<b>' + tree.tagName + ' : </b>');
+            var nodes = tree.childNodes.length;
+            for (var i = 0; i < nodes; i++) {
+                traverse(tree.childNodes[i]);
+            }
+            document.write('</li></ul>');
+        } else document.write(tree.nodeValue);
+    }
+
+
+</script>
+
+</body>
+</html>

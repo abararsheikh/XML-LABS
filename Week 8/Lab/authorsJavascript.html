@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors javascript</title>
+</head>
+<body>
+
+<h1>Authors</h1>
+<div id="author"></div>
+<script>
+
+
+    var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.open("get","authors.xml",false);
+    xmlhttp.send(null);
+
+
+    var xmlDoc = xmlhttp.responseXML;
+
+
+    var authors = xmlDoc.getElementsByTagName("author");
+
+    for (i = 0; i < authors.length; i++){
+
+        document.getElementById("author").innerHTML += ("<h4/>" +
+        xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue + "<br>" +
+        xmlDoc.getElementsByTagName("byline")[i].childNodes[0].nodeValue + "<br>" +
+        xmlDoc.getElementsByTagName("email")[i].childNodes[0].nodeValue + "<br><br>");
+    }
+
+
+
+</script>
+
+</body>
+</html>

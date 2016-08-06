@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FlightData" type="FlightDataType"/>
+  <xs:complexType name="FlightDataType">
+    <xs:sequence>
+      <xs:element type="HeaderType" name="Header" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="__fvdSurfCanyonInserted"/>
+  </xs:complexType>
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="HostAirportCode"/>
+      <xs:element type="xs:string" name="HostAirportCity"/>
+      <xs:element name="FlightNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="3092"/>
+            <xs:enumeration value="3278"/>
+            <xs:enumeration value="556"/>
+            <xs:enumeration value="557"/>
+            <xs:enumeration value="3423"/>
+            <xs:enumeration value="554"/>
+            <xs:enumeration value="3137"/>
+            <xs:enumeration value="1978"/>
+            <xs:enumeration value="1277"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FlightDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="20160330"/>
+            <xs:enumeration value="20160331"/>
+            <xs:enumeration value="20160401"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AirlineCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="AA"/>
+            <xs:enumeration value="WJA"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ArrivalOrDeparture">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="D"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ViaAirportCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="MDW"/>
+            <xs:enumeration value="YYC"/>
+            <xs:enumeration value="ORD"/>
+            <xs:enumeration value="MCO"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ViaAirportCity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Chicago"/>
+            <xs:enumeration value="Calgary"/>
+            <xs:enumeration value="Orlando"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="LegNumber"/>
+      <xs:element type="xs:string" name="BaggageCarousel"/>
+      <xs:element name="Gate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value=""/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="Terminal"/>
+      <xs:element name="ScheduleTime">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1416"/>
+            <xs:enumeration value="1500"/>
+            <xs:enumeration value="1813"/>
+            <xs:enumeration value="1855"/>
+            <xs:enumeration value="2208"/>
+            <xs:enumeration value="0538"/>
+            <xs:enumeration value="0630"/>
+            <xs:enumeration value="0945"/>
+            <xs:enumeration value="1642"/>
+            <xs:enumeration value="1815"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="EstimatedTime"/>
+      <xs:element type="xs:string" name="Route"/>
+      <xs:element type="xs:string" name="CurrentDisplayID"/>
+      <xs:element type="xs:string" name="ServerUTCTime"/>
+      <xs:element type="xs:string" name="ServerUTCUnixTime"/>
+      <xs:element type="xs:string" name="ActualTime"/>
+      <xs:element type="xs:string" name="Status"/>
+      <xs:element name="AircraftType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value=""/>
+            <xs:enumeration value="73W"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Comments">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Chicago"/>
+            <xs:enumeration value="Calgary"/>
+            <xs:enumeration value="Chicago OHare"/>
+            <xs:enumeration value="Orlando"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Tail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value=""/>
+            <xs:enumeration value="218"/>
+            <xs:enumeration value="243"/>
+            <xs:enumeration value="005"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RegistrationNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value=""/>
+            <xs:enumeration value="CFWSF"/>
+            <xs:enumeration value="CGWJG"/>
+            <xs:enumeration value="CGLWS"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="RecordType" use="optional"/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<books>
+ <book gen="fiction">
+  <title long="true">The Grapes of Wrath</title>
+  <author>John Steinbeck</author>
+ </book>
+ <book gen="fiction3">
+  <title long="true">The Pearl</title>
+  <author>John Steinbeck</author>
+ </book>
+ <book gen="fiction2">
+   <title long="false">PHP de Luxe</title>
+   <author>Richard Samar, Christian Stocker</author>
+ </book>
+ </books>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType mixed="true" name="authtype">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="first-name" type="xs:string" />
+                <xs:element name="last-name" type="xs:string" />
+            </xs:sequence>
+            <xs:element name="name" type="xs:string" />
+        </xs:choice>
+    </xs:complexType>
+    <xs:group name="atype">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="first-name" type="xs:string" />
+                <xs:element name="last-name" type="xs:string" />
+            </xs:sequence>
+            <xs:element name="name" type="xs:string" />
+        </xs:choice>
+    </xs:group>
+    <xs:element name="bookstore">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="xs:string" />
+                            <xs:element name="author" type="authtype" />
+                            <xs:element name="author">
+                                    <xs:complexType mixed="true">
+                                        <xs:group ref="atype" />
+
+                                    </xs:complexType>
+                                    </xs:element>
+
+                            <xs:element name="price" >
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="amount" type="xs:double" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                        <xs:attribute name="genre" type="xs:string" use="required"  />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:schema>

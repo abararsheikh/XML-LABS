@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Books</h1>
+<div id="book"></div>
+<script>
+
+// This example is using Javascript
+
+    var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.open("get","bookstore.xml",false);
+    xmlhttp.send(null);  //send your http Ajax request
+
+
+    var xmlDoc = xmlhttp.responseXML;   //get the response as XML and it's an array
+
+
+    var books = xmlDoc.getElementsByTagName("book");
+//Upto here is similar to displayxml.html ..puting root element in variable
+    for (i = 0; i < books.length; i++){
+
+       document.getElementById("book").innerHTML += (
+                xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
+                xmlDoc.getElementsByTagName("first-name")[i].childNodes[0].nodeValue + "<br>" +
+                xmlDoc.getElementsByTagName("price")[i].childNodes[0].nodeValue + "<br><br>");
+    }
+
+
+
+</script>
+
+</body>
+</html>

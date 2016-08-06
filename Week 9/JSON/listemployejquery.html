@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Employee List</h2>
+
+<div id="employeeList">
+
+</div>
+
+<!-- ajax Request by JQuery -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.getJSON('employee.json', function (data) {
+            var statusHTML = '<ul>';
+            $.each(data,function (index, employee) {  // this employee is just parameter, you can pass anything but make you use the same name to print the values
+
+                statusHTML += '<li>' + employee.firstName + ", " +employee.lastName +
+                        " ( " + employee.email + " )" ;
+                statusHTML += '</li>'
+            });
+            statusHTML += '</ul>';
+            $('#employeeList').html(statusHTML)
+
+            // Above line is used to print your data like ..InnerHrml in javascript
+
+        }); // end getJSON
+    }); //
+
+</script>
+</body>
+</html>

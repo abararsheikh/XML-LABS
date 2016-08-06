@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="flightInfo"></table>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("air.php", function (data) {
+
+            // you can take anything instead data ..
+
+            $("#result").html("");  // this is same as element.innerHtml
+
+            //$(data).find("bookstore").children().each(function() {
+            $(data).find("Header").each(function () {
+                var xmlDoc = $(this);
+console.log(xmlDoc);
+
+                $("#result").append("<h3>" +
+                        //xmlDoc.attr('genre') + "<br>" +
+                        xmlDoc.find("HostAirportCode").text() + "</h3>" +
+                        xmlDoc.find("FlightNumber").text() + "<br>" +
+                        xmlDoc.find("FlightDate").text() + "<br>" +
+                        xmlDoc.find("AirlineCode").text() + "<br>");
+            });
+        }, "xml");;
+    });
+</script>
+
+<div id="result"></div>
+</body>
+</html>

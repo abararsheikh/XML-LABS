@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+    <b>Title:</b> <span id="TITLE"></span><br>
+    <b>Artist:</b> <span id="ARTIST"></span><br>
+    <b>Country:</b> <span id="COUNTRY"></span>
+</div>
+</body>
+<script>
+//This Example is Same as    displayxml.html
+    var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.open("get","cd_catalog.xml",false);   //Here OPEN REQUEST IS FALSE MAKE SURE
+    xmlhttp.send(null);
+
+    var xmlDoc = xmlhttp.responseXML; //writing Response as an XML not Text
+    //alert(xmlhttp.responseText);
+    console.log(xmlDoc.getElementsByTagName("CD"));
+//displayxml.html    i am getting the root value in X ..and fron that root value i m using for loop to get all
+// the child element value
+
+//Here i am writing everything from xmlDoc .i am not looping any thing..just displaying one element value
+//If you want to display all element value then you have to use FOR LOOP  like  displayxml.html example
+
+// or you can refer next exaple after this folder --bookstore.html
+
+    document.getElementById("TITLE").innerHTML=xmlDoc.getElementsByTagName("TITLE")[0].childNodes[0].nodeValue ;
+
+    document.getElementById("ARTIST").innerHTML=xmlDoc.getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+    document.getElementById("COUNTRY").innerHTML=xmlDoc.getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue;
+</script>
+
+ </html>

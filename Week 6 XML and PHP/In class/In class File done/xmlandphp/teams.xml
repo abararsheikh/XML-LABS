@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<teams>
+	<team>
+		<name>Atlanta Braves</name>
+		<stadium>Turner Field</stadium>
+		<league>National</league>
+	</team>
+	<team>
+		<name>Chicago Cubs</name>
+		<stadium>Wrigley Field</stadium>
+		<league>National</league>
+	</team>
+	<team>
+		<name>Baltimore Orioles</name>
+		<stadium>Camden Yards</stadium>
+		<league>American</league>
+	</team>
+</teams>

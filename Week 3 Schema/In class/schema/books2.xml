@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<bookstore>
+    <book genre="autobiography">
+        <title>The Autobiography of Benjamin Franklin</title>
+
+        <!-- Mixed Content -->
+        <author>aaa
+            <first-name>Benjamin</first-name>
+            <last-name>Franklin</last-name>
+        </author>
+
+        <!-- Price element has only text as a content and also it has attribute so it is define with simpleContent
+         it does not have any element within it other wise it define with one single line-->
+
+        <price amount="8.99">CAN</price>
+
+    </book>
+    <book genre="novel">
+        <title>The Confidence Man</title>
+
+        <!-- Mixed Content -->
+
+        <author>bbb
+            <first-name>Herman</first-name>
+            <last-name>Melville</last-name>
+        </author>
+
+
+        <price amount="11.99">US</price>
+    </book>
+    <book genre="philosophy">
+        <title>The Gorgias</title>
+        <author>
+            <name>Plato</name>
+        </author>
+        <price amount="9.99">CAN</price>
+    </book>
+</bookstore>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get( "authors.xml", function(data) {
+                $("#result").html("");
+                //$(data).find("bookstore").children().each(function() {
+                $(data).find("author").each(function() {
+                    var xmlDoc = $(this);
+
+                    $("#result").append("<h3>" +
+                            xmlDoc.find("name").text() + "</h3>" +
+                            xmlDoc.find("byline").text() + "<br>" +
+                            xmlDoc.find("email").text() + "<br>"
+                            );
+                });
+            }, "xml");;
+        });
+    </script>
+</head>
+
+<body>
+
+<h2>Authors</h2>
+
+<div id="result"></div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    var map;
+    var service;
+    var infowindow;
+    function initMap() {
+        var pyrmont = new google.maps.LatLng(43.4501,-80.48299);
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: pyrmont,
+            zoom: 13
+        });
+
+            var request = {
+            location:pyrmont,
+            radius:8047,       // 5 miles radius search near by area
+            types:['cafe']    //we are looking for reataurant
+            // we can write anything ex;cafe,sports,airport what ever you want to search for it
+        };
+        infowindow = new google.maps.infowindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request,callback);
+    }
+
+    function callback(results,status)
+    {
+        if(status==google.maps.places.PlacesServiceStatus.ok)
+        {
+            for(var i= 0;i < results.length;i++)
+            {
+                createMarker(results[i]);
+            }
+        }
+    }
+    function createMarker(place)
+    {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map:map,
+            position:place.geometry.location
+        })
+    }
+    google.maps.event.addDomLister(window,'load',initialize);
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBTBpY3BEjjSD6DkqJErGnxf2dyh6myLY&callback=initMap"
+        async defer></script>
+</body>
+</html>

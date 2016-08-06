@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Book List</h2>
+
+<div id="bookList">
+                <!-- we are going to display our output here -->
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.getJSON('lab.json', function (data) {
+            var statusHTML = '<ul>';
+            $.each(data,function (index, book) { //you can type anything you are just passing book as parameter
+
+                statusHTML += '<li>' + book.title + ", " +book.author +
+                        " ( " + book.price + " )" ;
+                statusHTML += '</li>'
+            });
+            statusHTML += '</ul>';
+            $('#bookList').html(statusHTML)   //inside ().html(here we are putting result variable)
+        }); // end getJSON
+    }); //
+
+</script>
+</body>
+</html>

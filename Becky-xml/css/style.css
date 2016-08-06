@@ -1,0 +1,25 @@
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Gallery */
+/*
+#gallery img.thumbnail {
+    display: block;
+    max-width:194px;
+    height:80px !important;
+    overflow: hidden;
+
+    col-lg-1 col-md-2 col-sm-3 col-xs-4
+}*/
+
+#gallery img.col-lg-1.thumbnail{
+    /*height:90px !important;
+    overflow: hidden;*/
+}
+#gallery img.thumbnail {
+    border-color: black;
+    border-radius: 0;
+    border: 1px solid black;
+}

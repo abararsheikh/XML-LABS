@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE  internalmemo SYSTEM 'internalmemo.dtd' >
+<internalmemo priority ="low" initials ="signature" expiredate ="next week" origin ="marketing" >
+    <header>
+        <date> 03/01/2016 </date>
+        <sender> Abrar </sender>
+        <recipients> Navaz  </recipients>
+        <blind-recipients> Amrin </blind-recipients>
+        <subject>Reminder  </subject>
+    </header>
+        <body>
+            <para> </para>
+            <para> </para>
+            <para>Hello
+               <b>How</b>
+                <i>are you</i>
+            </para>
+
+            <sig> A.s.sheikh </sig>
+
+        </body>
+
+</internalmemo>
+
+
+

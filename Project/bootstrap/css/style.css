@@ -1,0 +1,22 @@
+#banner
+{
+    width:100%;
+
+}
+#googleMap
+{
+    width:100%;
+}
+#googleTransit
+{
+    font-size: 20px;
+    text-align: center;
+
+}
+.slider
+{
+    background-image: url("../../images/promo_rounded.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+

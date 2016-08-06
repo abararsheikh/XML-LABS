@@ -1,0 +1,43 @@
+<!-- HEre i am converting not.xml to html using ajax request -->
+<!DOCTYPE html>
+<html>
+<!--parse an XML string into an XML DOM object and then extracts some info from it with a JavaScript code-->
+<body>
+<h1>Humber College Note</h1>
+<!-- below is my code where i am going to extract my (save) my http response-->
+<div>
+    <b>To:</b> <span id="to"></span><br>
+    <b>From:</b> <span id="from"></span><br>
+    <b>Message:</b> <span id="message"></span>
+</div>
+<!-- below is my javascript file where i am storing whole .xml file into str (strig)
+ it's says pars this as xml file and put it in to memoey -->
+<script>
+    str= "<note>"
+            +"<to>All Students</to>"
+            +"<from>Marie Rishea</from>"
+            +"<heading>Reminder</heading>"
+            +"<body>Don't forget your mid-term over the weekend!</body>"
+            +"</note>";
+// for different browser we have to write different code
+    if (window.DOMParser) // buit in function
+    {
+        parser=new DOMParser();
+        xmlDoc=parser.parseFromString(str,"text/xml");
+    }
+    else // Internet Explorer
+    {
+        xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+        xmlDoc.async=false;
+        xmlDoc.loadXML(str);
+    }
+// i defined the above space t store my data that i am accessing here by javascript
+    // i am getting here getElementByTagName from xml element and its an array so each element is seprate array so
+    // that's why it hase [0] for all element. and .noodevalue is print element content
+    document.getElementById("to").innerHTML = xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+    document.getElementById("from").innerHTML=xmlDoc.getElementsByTagName("from")[0].firstChild.nodeValue;
+    document.getElementById("message").innerHTML=xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+</script>
+</body>
+</html>
+

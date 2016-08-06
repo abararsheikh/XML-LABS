@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get( "bookstore.xml", function(data) {  //here data means what ever response xml send that we are storing in data
+                                                     // and this data response passing as argument in function then wrting in result div
+                // you can take anything instead data ..
+
+                $("#result").html("");  // this is same as element.innerHtml  ..it's aindicate i m writing dat as html
+//data is like got the reponse as DOM-XML document and then fron document we r extracting
+ //data means we got response in it
+                //$(data).find("bookstore").children().each(function() {
+                    $(data).find("book").each(function() {  //find in whole document ..for each book ..here book is root element
+                    var xmlDoc = $(this);
+
+                    $("#result").append("<h3>" +
+                            xmlDoc.attr('genre') + "<br>" +
+                            xmlDoc.find("title").text() + "</h3>" +
+                            xmlDoc.find("author").text() + "<br>" +
+                          //  xmlDoc.find("author").text() + "<br>" +
+                            xmlDoc.find("price").text() + "<br>");
+                });
+            }, "xml");;
+        });
+    </script>
+</head>
+
+<body>
+
+        <h2>bookstore</h2>
+<!--  I am going to store above result in to this div tab -->
+
+        <div id="result"></div>
+
+</body>
+</html>
+
+

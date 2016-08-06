@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE catalog[
+<!ELEMENT catalog (product+)>
+<!ELEMENT product (name,thumbnail*,images*,description?,sizes*,colors*)>
+<!ATTLIST product
+sku CDATA #REQUIRED
+category CDATA #REQUIRED
+isFeatured CDATA #REQUIRED
+price CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT thumbnail (#PCDATA)>
+<!ELEMENT images (image+)>
+<!ELEMENT image (#PCDATA)>
+<!ATTLIST image
+name CDATA #IMPLIED>
+
+<!ELEMENT sizes (size+)>
+<!ELEMENT size (#PCDATA)>
+<!ATTLIST sizes
+label CDATA #IMPLIED>
+<!ELEMENT colors (color+)>
+<!ELEMENT color (#PCDATA)>
+]>
+
+<catalog>
+    <product sku = "abc" category ="a" isFeatured = "b" price = "20">
+        <name> Abrar</name>
+        <thumbnail> representation </thumbnail>
+        <images> 
+            <image name = "xml"> book1.jpg</image>
+            <image name = "xml"> book2.jpg</image>
+                
+        </images>
+        <description>XML and Web services </description>
+        
+        <sizes label = "coffee">
+            <size>small</size>
+        </sizes>
+        <colors>
+            <color>black </color>
+            <color>Red</color>
+                      
+        </colors>
+    
+    
+    </product>
+</catalog>

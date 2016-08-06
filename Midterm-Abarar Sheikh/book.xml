@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<book>
+
+    <title>Learn ASP.NET in 10 Hours</title>
+
+    <prod id="10-10-10-" media="paper"></prod>
+
+    <chapter>Introduction to ASP.NET
+
+        <para>What is ASP.NET </para>
+
+        <para>What is ADO.NET</para>
+
+    </chapter>
+
+    <chapter>ASP.NET Web Forms
+
+        <para>All about Labels </para>
+
+        <para>All about Buttons </para>
+
+    </chapter>
+
+</book>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE  SONG [
+        <!ELEMENT SONG (TITLE,COMPOSER+,PRODUCER,PUBLISHER,LENGTH?,YEAR,address,ARTIST*,ab) >
+        <!ELEMENT TITLE (#PCDATA) >
+        <!ELEMENT COMPOSER (#PCDATA) >
+        <!ELEMENT PRODUCER (#PCDATA) >
+        <!ELEMENT PUBLISHER (#PCDATA) >
+        <!ELEMENT LENGTH (#PCDATA) >
+        <!ELEMENT YEAR (#PCDATA) >
+        <!ELEMENT address (street,country, ( zipcode | postalcode) ) >
+        <!ELEMENT street (#PCDATA) >
+        <!ELEMENT country (#PCDATA) >
+        <!ELEMENT zipcode (#PCDATA) >
+        <!ELEMENT postalcode (#PCDATA) >
+        <!ELEMENT ARTIST (#PCDATA | city )* >
+        <!ELEMENT city (#PCDATA) >
+        <!ELEMENT ab EMPTY >
+        <!ATTLIST
+                TITLE songid ( aa | bb | cc) #REQUIRED
+
+
+                >
+]>
+
+<SONG>
+    <!-- Attribute  in DTC -->
+
+    <TITLE songid="aa">Hot Cop </TITLE>
+
+    <COMPOSER>Jacques Morali</COMPOSER>
+    <COMPOSER>Henri Belolo</COMPOSER>
+    <COMPOSER>Victor Willis</COMPOSER>
+    <PRODUCER>Jacques Morali</PRODUCER>
+    <PUBLISHER>PolyGram Records</PUBLISHER>
+    <LENGTH>6:20</LENGTH>
+    <YEAR>1978</YEAR>
+    <address>
+        <street>111</street>
+        <country>aa</country>
+        <postalcode>1234</postalcode>
+    </address>
+
+    <!-- Mixed Content in DTC -->
+
+    <ARTIST>Village People
+        <city>Toronto</city>
+    </ARTIST>
+
+    <!-- empty content in DTD-->
+
+    <ab></ab>
+
+</SONG>
